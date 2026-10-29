@@ -1,0 +1,13 @@
+BSQ (Dynamic Programming)
+
+LeetCode 221: Maximal Square
+Medium
+This is almost identical to your 42 BSQ algorithm. 
+Both use 1 + min(top, left, diagonal) to find the largest square.
+
+===
+
+Game of Life
+
+LeetCode 289
+Simulate Conway's Game of Life by updating cells according to their eight neighbors.

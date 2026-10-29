@@ -1,0 +1,74 @@
+/* ******************** NEED TO BE IMPLEMENTED ******************** */
+#include "../include/set.hpp"
+
+set::set() : bag(0) 
+{
+}
+
+set::set(searchable_bag& other_bag) : bag(&other_bag) 
+{
+}
+
+set::set(const set& other) 
+{
+	if (other.bag)
+		bag = other.bag;
+	else
+		bag = 0;
+}
+
+set& set::operator=(const set& other) 
+{
+	if (this != &other) 
+	{
+		if (other.bag)
+			bag = other.bag;
+		else
+			bag = 0;
+	}
+	return (*this);
+}
+
+set::~set() 
+{
+}
+
+/* ******************** */
+
+void set::insert(int item) 
+{
+	if (bag && !has(item))
+		(*bag).insert(item);
+}
+
+void set::insert(int* items, int size) 
+{
+	for (int i = 0; i < size; i++)
+		if (bag && !has(items[i]))
+			(*bag).insert(items[i]);
+}
+
+/* ******************** */
+
+void set::print() const 
+{
+	(*bag).print();
+}
+
+void set::clear() 
+{
+	(*bag).clear();
+}
+
+/* ******************** */
+
+bool set::has(int item) const 
+{
+	return ((*bag).has(item));
+}
+
+searchable_bag& set::get_bag() const 
+{
+	return (*bag);
+}
+
